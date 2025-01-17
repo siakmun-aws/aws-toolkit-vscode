@@ -6,7 +6,7 @@
 import * as vscode from 'vscode'
 import { WorkspaceFolderNotFoundError } from '../../../amazonqFeatureDev/errors'
 import { VirtualFileSystem, VirtualMemoryFile } from '../../../shared'
-import { CurrentWsFolders } from '../../types'
+import { CurrentWsFolders } from '../types'
 
 export interface SessionConfig {
     // The paths on disk to where the source code lives
