@@ -36,7 +36,7 @@ import {
     MetricDataOperationName,
     MetricDataResult,
     type NewFileInfo,
-} from '../../../amazonqFeatureCommon/types'
+} from '../../../amazonq'
 import { AuthUtil } from '../../../codewhisperer/util/authUtil'
 import { AuthController } from '../../../amazonq/auth/controller'
 import { getLogger } from '../../../shared/logger'
@@ -44,7 +44,7 @@ import { submitFeedback } from '../../../feedback/vue/submitFeedback'
 import { placeholder } from '../../../shared/vscode/commands2'
 import { EditorContentController } from '../../../amazonq/commons/controllers/contentController'
 import { openUrl } from '../../../shared/utilities/vsCodeUtils'
-import { getPathsFromZipFilePath } from '../../../amazonqFeatureCommon/util/files'
+import { getPathsFromZipFilePath } from '../../../amazonq/util/files'
 import { examples, messageWithConversationId } from '../../userFacingText'
 import { getWorkspaceFoldersByPrefixes } from '../../../shared/utilities/workspaceUtils'
 import { openDeletedDiff, openDiff } from '../../../amazonq/commons/diff'

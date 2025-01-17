@@ -13,7 +13,7 @@ import { SessionConfig } from '../../amazonq/commons/session/sessionConfigFactor
 import { ReferenceLogViewProvider } from '../../codewhisperer'
 import path from 'path'
 import { FeatureDevClient } from '../../amazonqFeatureDev/client/featureDev'
-import { TelemetryHelper } from '../../amazonqFeatureCommon/util/telemetryHelper'
+import { TelemetryHelper } from '../../amazonq/util/telemetryHelper'
 import { ConversationNotStartedState } from '../../amazonqFeatureDev/session/sessionState'
 import { logWithConversationId } from '../../amazonqFeatureDev/userFacingText'
 import { ConversationIdNotFoundError } from '../../amazonqFeatureDev/errors'
