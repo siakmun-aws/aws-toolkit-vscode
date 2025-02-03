@@ -7,15 +7,12 @@ import * as vscode from 'vscode'
 import * as path from 'path'
 import { collectFiles, getWorkspaceFoldersByPrefixes } from '../../shared/utilities/workspaceUtils'
 
-import AdmZip from 'adm-zip'
 import { ContentLengthError, PrepareRepoFailedError } from '../../amazonqFeatureDev/errors'
 import { getLogger } from '../../shared/logger/logger'
 import { maxFileSizeBytes } from '../../amazonqFeatureDev/limits'
-import { createHash } from 'crypto'
-import { CurrentWsFolders, DeletedFileInfo, NewFileInfo, NewFileZipContents } from '../commons/types'
+import { CurrentWsFolders, DeletedFileInfo, NewFileInfo, NewFileZipContents } from '../../amazonqDoc/types'
 import { hasCode, ToolkitError } from '../../shared/errors'
 import { AmazonqCreateUpload, Span, telemetry as amznTelemetry, telemetry } from '../../shared/telemetry/telemetry'
-import { TelemetryHelper } from './telemetryHelper'
 import { maxRepoSizeBytes } from '../../amazonqFeatureDev/constants'
 import { isCodeFile } from '../../shared/filetypes'
 import { fs, VirtualFileSystem, VirtualMemoryFile } from '../../shared'
@@ -23,8 +20,7 @@ import { CodeWhispererSettings } from '../../codewhisperer'
 import { ZipStream } from '../../shared/utilities/zipStream'
 import { isPresent } from '../../shared/utilities/collectionUtils'
 import { AuthUtil } from '../../codewhisperer'
-
-const getSha256 = (file: Buffer) => createHash('sha256').update(file).digest('base64')
+import { TelemetryHelper } from '../../amazonqFeatureDev'
 
 export async function checkForDevFile(root: string) {
     const devFilePath = root + '/devfile.yaml'
